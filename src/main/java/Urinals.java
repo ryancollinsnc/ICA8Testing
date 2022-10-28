@@ -19,12 +19,17 @@ public class Urinals {
                 string_list.add(data);
             }
             myReader.close();
-            return string_list;
         }
         catch(Exception e){
             System.out.println(e);
             return string_list;
         }
+
+        if(string_list==null){
+            System.out.println("File is empty");
+            return string_list;
+        }
+        return string_list;
     }
 
     public static void main(String[] args) {

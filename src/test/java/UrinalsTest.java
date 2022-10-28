@@ -9,5 +9,8 @@ class UrinalsTest {
         ArrayList<String> inp= new ArrayList<>();
         System.out.println("Ryan Collins ** Test One Executed");
         assertEquals(inp, Urinals.get("urinals.dat"));
+        
+        System.out.println("Ryan Collins ** Test two Executed");
+        assertEquals(inp, Urinals.get("urinals.dat"));
     }
 }
