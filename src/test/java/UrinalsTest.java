@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UrinalsTest {
 
     @org.junit.jupiter.api.Test
-    void gett() throws Exception {
+    void gett() {
         ArrayList<String> inp= new ArrayList<>();
         System.out.println("Ryan Collins ** Test One Executed");
         assertEquals(inp, Urinals.gett("urinals1.dat"));
@@ -15,7 +15,16 @@ class UrinalsTest {
        System.out.println("Ryan Collins ** Test two Executed");
         assertEquals(inp, Urinals.gett("urinals2.dat"));
 
-        inp.add("000");
+        inp.add("100001");
+        inp.add("00000");
+        inp.add("10001");
+        inp.add("0011");
+        inp.add("1100");
+        inp.add("00");
+        inp.add("01");
+        inp.add("10");
+        inp.add("0");
+        inp.add("1");
 
         System.out.println("Ryan Collins ** Test three Executed");
         assertEquals(inp, Urinals.gett("urinals.dat"));

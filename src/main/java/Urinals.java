@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Urinals {
 
-    static ArrayList<String> gett(String file) throws Exception {
+    static ArrayList<String> gett(String file) {
         File reader;
         Scanner myReader;
         ArrayList<String> string_list = new ArrayList<>();
@@ -22,7 +22,7 @@ public class Urinals {
             myReader.close();
         }
         catch(Exception e){
-            System.out.println(e);
+            System.out.println("error");
             return string_list;
         }
 
@@ -79,15 +79,14 @@ public class Urinals {
 
     static int print(ArrayList<Integer> op){
         int temp=0;
-        boolean chk=true;
-        while(chk){
+        while(true){
             int temp2=temp;
-            String fname=new String();
+            String fname;
             if(temp2==0){
                 fname="rule.txt";
             }
             else{
-                fname="rule"+ String.valueOf(temp)+".txt";
+                fname="rule"+ temp +".txt";
             }
             try{
                 File f=new File(fname);
@@ -102,7 +101,7 @@ public class Urinals {
                             fw.close();
                             System.out.println("File Written Successfully");
                         }catch(Exception e){
-                            System.out.println(e);
+                            System.out.println("error");
                         }
                     }
                     return 0;
@@ -110,16 +109,15 @@ public class Urinals {
                     temp++;
                 }
             }catch(Exception e){
-                System.out.println(e);
+                System.out.println("error");
                 return 1;
             }
         }
-        return 1;
     }
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         ArrayList<String> a= gett("urinals.dat");
         ArrayList<Integer> b= calc(a);
-        int c = print(b);
+        print(b);
 
 
     }
