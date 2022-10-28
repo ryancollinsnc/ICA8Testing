@@ -35,4 +35,18 @@ class UrinalsTest {
         op.add(-1);
         assertEquals(op, Urinals.calc(chk));
     }
+
+    @Test
+    void print() {
+        ArrayList<Integer> op=new ArrayList<>();
+
+        System.out.println("Ryan Collins ** Test one executed");
+        assertEquals(0, Urinals.print(op));
+        op.add(2);
+        op.add(1);
+        op.add(1);
+        op.add(-1);
+        System.out.println("Ryan Collins ** Test Two and Three executed");
+        assertEquals(0, Urinals.print(op));
+    }
 }
