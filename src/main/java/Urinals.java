@@ -44,7 +44,7 @@ public class Urinals {
                     } else if (i == check.length() - 1 && check.charAt(i) == '0' && check.charAt(i - 1) == '0') { // If at last element
                         ans++;
                         check = check.substring(0, i) + '1' + check.substring(i + 1);
-                    } else if (check.charAt(i - 1) == '0' && check.charAt(i) == '0' && check.charAt(i + 1) == '0') { // If in the middle
+                    } else if (check.charAt(i + 1) == '0' && check.charAt(i - 1) == '0' && check.charAt(i) == '0') { // If in the middle
                         ans++;
                         check = check.substring(0, i) + "1" + check.substring(i + 1);
                     }
