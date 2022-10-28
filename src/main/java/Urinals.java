@@ -32,6 +32,33 @@ public class Urinals {
         System.out.println("File read Successfully");
         return string_list;
     }
+    static ArrayList<Integer> calc(ArrayList<String> string_list) {
+        int ans=0;
+        ArrayList<Integer> answer=new ArrayList<>();
+        for (String check : string_list) {
+            for (int i = 0; i < check.length(); i++) {
+                if (check.charAt(i) == '0') {
+                    if (i == 0 && check.charAt(i + 1) == '0' && check.charAt(i) == '0') { // If at first element
+                        ans++;
+                        check = check.substring(0, i) + '1' + check.substring(i + 1);
+                    } else if (i == check.length() - 1 && check.charAt(i) == '0' && check.charAt(i - 1) == '0') { // If at last element
+                        ans++;
+                        check = check.substring(0, i) + '1' + check.substring(i + 1);
+                    } else if (check.charAt(i - 1) == '0' && check.charAt(i) == '0' && check.charAt(i + 1) == '0') { // If in the middle
+                        ans++;
+                        check = check.substring(0, i) + "1" + check.substring(i + 1);
+                    }
+                }
+            }
+            if(ans==0){
+                ans=-1;
+            }
+            answer.add(ans);
+            ans = 0;
+        }
+        System.out.println("Count Check Worked");
+        return answer;
+    }
 
     public static void main(String[] args) {
     }
